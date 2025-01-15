@@ -22,9 +22,11 @@ export async function authenticate(
       password,
     })
 
+    const orgsRole = 'ADMIN'
+    
     const token = await reply.jwtSign(
       {
-        role: orgs.role,
+        role: orgsRole,
       },
       {
         sign: {
